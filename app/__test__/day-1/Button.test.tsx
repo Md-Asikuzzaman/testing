@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Button from '../components/Button';
+import Button from '../../components/day-1/Button';
 
 describe('Button Component', () => {
   test('Found click me text', () => {
@@ -13,7 +13,7 @@ describe('Button Component', () => {
     render(<Button />);
 
     const btn = screen.getByText(/click me/i);
-    
+
     fireEvent.click(btn);
     expect(btn).toHaveTextContent(/clicked/i);
   });

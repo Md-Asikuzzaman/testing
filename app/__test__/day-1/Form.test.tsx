@@ -1,7 +1,7 @@
 // Form.test.js
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import Form from '../components/Form';
+import Form from '../../components/day-1/Form';
 
 test('calls onSubmit with the input value', () => {
   const handleSubmit = jest.fn();

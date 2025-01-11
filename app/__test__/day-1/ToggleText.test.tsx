@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import ToggleText from '../components/ToggleText';
+import ToggleText from '../../components/day-1/ToggleText';
 
 it('should render toggle text', () => {
   render(<ToggleText />);

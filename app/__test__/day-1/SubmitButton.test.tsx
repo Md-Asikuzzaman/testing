@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import SubmitButton from '../components/SubmitButton';
+import SubmitButton from '../../components/day-1/SubmitButton';
 
 describe('Should enable a button after a click', () => {
   test('enable button', () => {

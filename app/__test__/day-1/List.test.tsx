@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import List from '../components/List';
+import List from '../../components/day-1/List';
 
 describe('Should render a list of items', () => {
   test('render list', () => {

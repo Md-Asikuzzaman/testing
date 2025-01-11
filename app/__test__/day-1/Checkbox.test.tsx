@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import Checkbox from '../components/Checkbox';
+import Checkbox from '../../components/day-1/Checkbox';
 
 test('should render hello text', () => {
   render(<Checkbox />);
