@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .input {
+    @apply w-full mb-2 p-4 border-black border-2 rounded-md;
+  }
+
+  .error {
+    @apply text-red-500 text-sm;
+  }
+
+  .success {
+    @apply text-green-400 text-sm bg-slate-600 mt-3 rounded-md p-3;
+  }
+}

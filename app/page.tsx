@@ -1,12 +1,22 @@
-import React from 'react';
-import Button from './components/day-2/Button';
-import Login from './components/day-2/Login';
+import React, { Suspense } from 'react';
+import Posts from './components/Posts';
 
-const Home = () => {
+async function getPosts() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
+    cache: 'no-store',
+  });
+  return res.json();
+}
+
+const Home = async () => {
+  const posts = await getPosts();
+
   return (
-    <div>
-      <Button />
-      <Login />
+    <div className='m-4'>
+      <h1 className='mb-5 text-3xl text-center'>Hello SSR</h1>
+      <Suspense fallback={<p>Loading...</p>}>
+        <Posts posts={posts} />
+      </Suspense>
     </div>
   );
 };

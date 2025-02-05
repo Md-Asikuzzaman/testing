@@ -14,6 +14,7 @@ const Login = ({ login }: any) => {
       console.log('clicked');
     } catch (err) {
       setError('Invalid credentials');
+      console.log(err);
     }
   };
 
