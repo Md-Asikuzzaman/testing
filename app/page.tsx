@@ -1,21 +1,19 @@
 import React, { Suspense } from 'react';
-import Posts from './components/Posts';
+// import PostList from './components/PostList';
+import dynamic from 'next/dynamic';
 
-async function getPosts() {
-  const res = await fetch('https://jsonplaceholder.typicode.com/posts', {
-    cache: 'no-store',
-  });
-  return res.json();
-}
+const PostList = dynamic(() => import('./components/PostList'), {
+  ssr: true,
+  loading: () => <p>All Posts Loading...</p>, // use only one loading technique
+});
 
 const Home = async () => {
-  const posts = await getPosts();
-
   return (
     <div className='m-4'>
       <h1 className='mb-5 text-3xl text-center'>Hello SSR</h1>
-      <Suspense fallback={<p>Loading...</p>}>
-        <Posts posts={posts} />
+      {/* use only one loading technique */}
+      <Suspense fallback={<p>All Posts Loading...</p>}>
+        <PostList />
       </Suspense>
     </div>
   );
